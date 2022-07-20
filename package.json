@@ -1,0 +1,16 @@
+{
+  "name": "kenny-tailwind-practice",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "watch": "npx tailwindcss -i ./src/main.css -o ./dist/main.css --watch",
+    "build": "npx tailwindcss -i ./src/main.css -o ./dist/main.css"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "tailwindcss": "^3.1.6"
+  }
+}
