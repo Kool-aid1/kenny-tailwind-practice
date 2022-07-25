@@ -57,40 +57,41 @@
   function createSlide(wine) {
     return `
       <li class="splide__slide">
-        <div class="flex flex-col h-525 w-254 px-3 mx-5">
-          <div class="relative bg-gray pt-[118.1822%]">
+        <div class="flex flex-col px-3">
+          <div class="relative bg-gray">
             <img 
               class="
-                absolute 
-                top-1/2 
-                left-1/2 
-                transform 
-                -translate-x-1/2 
-                -translate-y-1/2
+                block
+                mx-auto
+                w-1/2
               "
-              src="./images/image_56.png" 
+              src="./images/image_56.png"
               alt="${wine.title}" 
               loading="eager"
             >
           </div>
-          <h2 class="font-bold text-lg">
+
+          <h2 class="font-bold text-[16px] leading-[22px] md:text-[18px]">
             ${wine.title}
           </h2>
-          <span class="text-sm">${wine.origin}</span>
-          <span class="mb-1 text-sm">${wine.taste}</span>
-          <span class="font-bold mb-1 text-xl">${wine.price}</span>
-          <div>
-            <img 
-              class="mb-7" 
-              src="./images/Ratings.png" 
-              loading="eager"
-            >
+
+          <div class="flex flex-col text-[16px] leading-[22px] md:text-[18px]">
+            <span class="text-sm opacity-60">${wine.origin}</span>
+            <span class="mb-1 text-sm opacity-60">${wine.taste}</span>
+            <span class="font-bold mb-1 text-xl">${wine.price}</span>
+            <div>
+              <img 
+                class="mb-7" 
+                src="./images/Ratings.png" 
+                loading="eager"
+              >
+            </div>
           </div>
+        
           <button 
             class="
               w-full 
-              px-14 
-              py-3.5 
+              h-[52px]
               font-bold 
               text-white 
               bg-red
@@ -110,17 +111,33 @@
       return;
     }
 
-    document.querySelector('.splide__list').innerHTML = slides.join();
+    document.querySelector('.splide__list').innerHTML = slides.join('');
   }
 
   function initSlider() {
+    // breakpoints 320, 475/480, 640, 768, 1024, 1280, 1536
     const splide = new Splide(selectors.splide, {
       type: 'loop',
-      perPage: 5,
-      drag: 'free',
-      snap: 'true',
-      focus: 'left',
-      gap: '1rem'
+      mediaQuery: 'min',
+      perPage: '2',
+      gap: '1rem',
+      breakpoints: {
+        320: {
+          perPage: 2
+        },
+        475: {
+          perPage: 2
+        },
+        640: {
+          perPage: 3
+        },
+        768: {
+          perPage: 4
+        },
+        1024: {
+          perPage: 5
+        }
+      }
     });
 
     splide.mount();

@@ -7,10 +7,11 @@
 }
 
 .slider-progress-bar {
-    
     background: black;
     height: 5px;
     transition: width 400ms ease;
     width: 0;
     margin-bottom: 1rem;
 }
+
+@media (max-width: 320px) {}
