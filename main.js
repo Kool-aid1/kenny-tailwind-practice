@@ -13,13 +13,13 @@
     {
       title: '2018 George Phillips Cellars Reserve Selection No.101 Zinfandel',
       origin: 'California, United States',
-      taste: 'blueberry, cherry, black pepper',
+      taste: 'Blueberry, Cherry, Black Pepper',
       price: '$17.99'
     },
     {
       title: '2018 Sierra Trasils Old Vine Zinfandel',
       origin: 'California, United States',
-      taste: 'Strawberry, plum, red currant, tobacco, black pepper, oak',
+      taste: 'Strawberry, Plum, Red Currant, Tobacco, Black Pepper, Oak',
       price: '$14.99'
     },
     {
@@ -71,13 +71,13 @@
             >
           </div>
 
-          <h2 class="font-bold text-[16px] leading-[22px] md:text-[18px]">
+          <h2 class="font-bold text-[16px] leading-[22px] md:text-[18px] h-24 mt-4">
             ${wine.title}
           </h2>
 
-          <div class="flex flex-col text-[16px] leading-[22px] md:text-[18px]">
-            <span class="text-sm opacity-60">${wine.origin}</span>
-            <span class="mb-1 text-sm opacity-60">${wine.taste}</span>
+          <div class="flex flex-col text-[16px] leading-[22px] md:text-[18px] h-38">
+            <span class="text-sm opacity-60 h-8">${wine.origin}</span>
+            <span class="mb-1 text-sm opacity-60 h-16">${wine.taste}</span>
             <span class="font-bold mb-1 text-xl">${wine.price}</span>
             <div>
               <img 
@@ -140,13 +140,22 @@
       }
     });
 
+    
     splide.mount();
+
+    var bar = splide.root.querySelector( '.slider-progress-bar' );
+  
+    splide.on( 'mounted move', function () {
+      var end = splide.Components.Controller.getEnd() + 1;
+      bar.style.width = String( 100 * ( splide.index+1 ) / end) + '%';
+    } );
   }
 
   function init() {
     createSlides();
     initSlider();
   }
+
 
   document.addEventListener('DOMContentLoaded', init);
 })();
