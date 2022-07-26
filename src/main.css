@@ -4,8 +4,22 @@
 
 .slider-progress {
     background: #ccc;
-    width: 100%;
+    width: 85%;
+    height: 4px;
+    position: absolute;
+    left: 7%;
+    bottom: -52px;
 }
+
+.splide__list {
+    height: auto;
+}
+
+.splide__pagination--ltr {
+    display: none;
+}
+
+
 
 .slider-progress-bar {
     background: black;
@@ -13,6 +27,9 @@
     transition: width 400ms ease;
     width: 0;
     margin-bottom: 1rem;
+    
 }
+
+
 
 @media (max-width: 320px) {}

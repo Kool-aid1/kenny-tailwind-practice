@@ -15,19 +15,39 @@
 <body>
   <!-- Featured Products Slider -->
   <section class="max-w-screen-2xl mx-auto">
-    <h1 class="mb-[32px] font-bold m-5 text-lg">
+    <h1 class="mb-[30px] font-bold m-5 text-lg">
       What we're loving right now
     </h1>
     <section class="splide">
+
       <div class="splide__track">
         <ul class="splide__list">
         </ul>
       </div>
 
       <div class="slider-progress">
-        <div class="slider-progress-bar"></div>
+        <div class="slider-progress-bar relative"></div>
       </div>
-      
+
+      <div class="relative bottom-[-50px]">
+      <div class="splide__arrows">
+        <div class="splide__arrow splide__arrow--prev">
+          <svg width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <rect x="39.5" y="39.5" width="39" height="39" rx="19.5" transform="rotate(-180 39.5 39.5)" fill="white"/>
+            <path d="M24 15L19 20L24 25L23 27L16 20L23 13L24 15Z" fill="black"/>
+            <rect x="39.5" y="39.5" width="39" height="39" rx="19.5" transform="rotate(-180 39.5 39.5)" stroke="black"/>
+          </svg>
+        </div>
+        <div class="splide__arrow splide__arrow--next">
+          <svg width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <rect x="0.5" y="0.5" width="39" height="39" rx="19.5" fill="white"/>
+            <path d="M16 25L21 20L16 15L17 13L24 20L17 27L16 25Z" fill="black"/>
+            <rect x="0.5" y="0.5" width="39" height="39" rx="19.5" stroke="black"/>
+          </svg>
+        </div>
+      </div>
+      </div>
+
     </section>
   </section>
   <!-- Featured Products Slider -->

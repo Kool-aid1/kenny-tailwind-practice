@@ -69,6 +69,11 @@
               alt="${wine.title}" 
               loading="eager"
             >
+            <div class="absolute top-3 left-2">
+              <svg width="59" height="59" viewBox="0 0 59 59" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <circle cx="29.4793" cy="29.4755" r="28.9546" fill="#666666"/>
+              </svg>
+            </div>
           </div>
 
           <h2 class="font-bold text-[16px] leading-[22px] md:text-[18px] h-24 mt-4">
@@ -117,10 +122,11 @@
   function initSlider() {
     // breakpoints 320, 475/480, 640, 768, 1024, 1280, 1536
     const splide = new Splide(selectors.splide, {
-      type: 'loop',
+      type: 'slide',
       mediaQuery: 'min',
       perPage: '2',
       gap: '1rem',
+      rewind: true,
       breakpoints: {
         320: {
           perPage: 2
@@ -143,13 +149,19 @@
     
     splide.mount();
 
+
     var bar = splide.root.querySelector( '.slider-progress-bar' );
-  
+
     splide.on( 'mounted move', function () {
       var end = splide.Components.Controller.getEnd() + 1;
-      bar.style.width = String( 100 * ( splide.index+1 ) / end) + '%';
+      bar.style.width = String( 100 * ( splide.index +1) / end) + '%';
+      
+      console.log(bar.style.width);
+      console.log(splide.index);
+      console.log(end);
     } );
   }
+
 
   function init() {
     createSlides();
